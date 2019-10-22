@@ -1,7 +1,6 @@
-const path = require('path')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-
+const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   module: {
     rules: [
@@ -21,7 +20,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.sass$/,
+        test: /\.s(a|c)ss$/, 
         use: [
             MiniCssExtractPlugin.loader,
             // "style-loader", // style nodes from js strings
@@ -43,4 +42,4 @@ module.exports = {
       chunkFilename: "[id].css"
     })
   ]
-}
+};
