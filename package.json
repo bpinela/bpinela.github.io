@@ -10,9 +10,6 @@
   },
   "author": "pineladsn",
   "license": "MIT",
-  "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
