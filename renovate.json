@@ -1,5 +1,0 @@
-{
-  "extends": ["config:base"],
-  "assignees": ["pineladsn"],
-  "bumpVersion": "patch"
-}
