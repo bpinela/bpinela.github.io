@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Appbar from '../Appbar/Appbar';
 import { Wrapper } from './Layout.styles';
 
 export interface ILayout extends React.ComponentPropsWithoutRef<'div'> {
@@ -15,7 +14,6 @@ const Layout: React.FC<ILayout> = ({ children, title }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Appbar />
       <Wrapper>{children}</Wrapper>
     </>
   );
