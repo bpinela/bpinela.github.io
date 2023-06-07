@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { NextPageWithLayout } from './_app';
 
 const Home: NextPageWithLayout = () => {
-  return <p>Bruno Pinela</p>;
+  return <></>;
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {

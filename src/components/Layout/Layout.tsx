@@ -1,4 +1,8 @@
+import Header from '@/components/Header/Header';
+import usePersistedState from '@/hooks/usePersistedState';
+import { GlobalStyles, darkTheme, lightTheme } from '@/styles/global';
 import Head from 'next/head';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { Wrapper } from './Layout.styles';
 
 export interface ILayout extends React.ComponentPropsWithoutRef<'div'> {
@@ -6,6 +10,11 @@ export interface ILayout extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 const Layout: React.FC<ILayout> = ({ children, title }) => {
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', darkTheme);
+
+  const toggleTheme = () => {
+    setTheme(theme.body === '#b2bec3' ? darkTheme : lightTheme);
+  };
   return (
     <>
       <Head>
@@ -14,7 +23,11 @@ const Layout: React.FC<ILayout> = ({ children, title }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Wrapper>{children}</Wrapper>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <Wrapper>{children}</Wrapper>
+      </ThemeProvider>
     </>
   );
 };
