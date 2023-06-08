@@ -23,9 +23,9 @@ const Header: React.FC<IHeader> = ({ theme, toggleTheme }) => {
           About
         </MenuItem>
         {theme?.body === '#b2bec3' ? (
-          <BiSunIcon size={24} onClick={toggleTheme} />
-        ) : (
           <BiMoonIcon size={24} onClick={toggleTheme} />
+        ) : (
+          <BiSunIcon size={24} onClick={toggleTheme} />
         )}
       </MenuList>
     </Container>

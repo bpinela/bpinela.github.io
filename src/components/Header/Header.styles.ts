@@ -30,7 +30,7 @@ export const MenuItem = styled(Link)`
   padding: 0 16px;
 
   &:hover {
-    color: #f3f3f3;
+    color: ${props => props.theme.highlight};
   }
 `;
 
