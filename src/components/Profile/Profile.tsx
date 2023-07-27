@@ -1,3 +1,4 @@
+import ProfilePhoto from '@/assets/profile.jpg';
 import Link from 'next/link';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { Container, Content, Photo, SocialMedia } from './Profile.styles';
@@ -7,9 +8,7 @@ const Profile: React.FC = () => {
     <Container>
       <Content>
         <Photo
-          src={
-            'https://media.licdn.com/dms/image/C4D03AQENFl70VuYPYg/profile-displayphoto-shrink_800_800/0/1647521107980?e=2147483647&v=beta&t=3SFXrWwxT0LTg7R-Uz3ia5tfnKqxYsQ80bEwmgIybsY'
-          }
+          src={ProfilePhoto}
           alt="Bruno Pinela"
           width={120}
           height={120}
