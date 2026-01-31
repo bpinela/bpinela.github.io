@@ -1,19 +1,19 @@
-import Header from '@/components/Header/Header';
-import usePersistedState from '@/hooks/usePersistedState';
-import { GlobalStyles, darkTheme, lightTheme } from '@/styles/global';
-import Head from 'next/head';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
-import { Wrapper } from './Layout.styles';
+import Header from "@/components/Header";
+import usePersistedState from "@/hooks/usePersistedState";
+import { GlobalStyles, darkTheme, lightTheme } from "@/styles/global";
+import Head from "next/head";
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import { Wrapper } from "./Layout.styles";
 
-export interface ILayout extends React.ComponentPropsWithoutRef<'div'> {
+export interface ILayout extends React.ComponentPropsWithoutRef<"div"> {
   title: string;
 }
 
 const Layout: React.FC<ILayout> = ({ children, title }) => {
-  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', darkTheme);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", darkTheme);
 
   const toggleTheme = () => {
-    setTheme(theme.body === '#b2bec3' ? darkTheme : lightTheme);
+    setTheme(theme.body === "#b2bec3" ? darkTheme : lightTheme);
   };
   return (
     <>
